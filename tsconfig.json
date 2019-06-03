@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "inlineSourceMap": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "outDir": "tmpJSFiles",
+        "removeComments": false,
+        "sourceMap": false,
+        "esModuleInterop": true
+    },
+    "exclude": [
+        "node_modules",
+        "asyncAwait",
+        "plugins.ts"
+    ]
+}
