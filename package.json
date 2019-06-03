@@ -1,0 +1,28 @@
+{
+  "name": "typescript_framework",
+  "version": "1.0.0",
+  "description": "Automation framework using typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksr229/typescript_framework.git"
+  },
+  "author": "Sushank",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ksr229/typescript_framework/issues"
+  },
+  "homepage": "https://github.com/ksr229/typescript_framework#readme",
+  "devDependencies": {
+    "protractor": "^5.4.2",
+    "typescript": "3.5.1",
+    "jasmine": "~3.4.0",
+    "@types/jasmine": "3.3.13",
+    "@types/jasminewd2": "2.0.6",
+    "ts-node": "^8.2.0",
+    "@types/node": "12.0.4"
+  }
+}
