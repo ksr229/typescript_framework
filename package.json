@@ -4,7 +4,11 @@
   "description": "Automation framework using typescript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "protractor ./tmpJSFiles/conf.js",
+    "pretest": "tsc",
+    "protractor": "./node_modules/protractor/built/cli.js",
+    "wdm:update": "./node_modules/.bin/webdriver-manager update"     
+    
   },
   "repository": {
     "type": "git",
@@ -22,6 +26,8 @@
     "@types/node": "10.12.18",
     "jasmine": "~3.3.1",
     "protractor": "^5.4.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
     "ts-node": "^7.0.1",
     "typescript": "3.2.2"
   }
