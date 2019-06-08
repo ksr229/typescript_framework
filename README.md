@@ -74,7 +74,7 @@ Use of scenario outline and examples in the feature file.
 The test data is provided from the feature file itself.
 
 ###7 Cucumber- ChaiAssertion Library
-  Chai
+  [Chai]
   ****
   Add dev dependancies:
   ```
