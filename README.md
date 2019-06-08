@@ -6,7 +6,7 @@ Steps to create a typescript test automation framework
 
 typescript and protractor were installed on global level as was recommended inspight of, the fact that they were mentioned in package.json and were installed using npm install.
 
-###1 Scripts: 
+## 1 Scripts: 
 
 available in package.json
 
@@ -17,7 +17,7 @@ pretest- when you give npm run test,
 protractor- is installed globally and for the node to identify it in the folder, its important to give the path of the cli.js for protractor in built folder.
 ```
 
-###2 CUCUMBER
+## 2 CUCUMBER
 This is a BDD style test framework for designing the Automation framework.
 
 1. Add dependencies for cucumber
@@ -34,7 +34,7 @@ This is a BDD style test framework for designing the Automation framework.
   The file cucumberconfig.ts was added.
 ```
 
-###3 Cucumber- Feature files.
+## 3 Cucumber- Feature files.
 Add new folder for feature files.
 Feature file is what holds the test case in the Gherkin language.
   All feature files have an extension of 
@@ -47,7 +47,7 @@ Add the location to the cucumberconfig.ts file in the specs section e.g
 specs: ['../featureFolder/demo.feature']
 ```
 
-###4 Cucumber- Step Definitions
+## 4 Cucumber- Step Definitions
 Add new folder for the step definitions.
   Add this to the cucumberconfig.ts file under 
 ```
@@ -65,16 +65,17 @@ cucumberOpts
 ```
 './stepDefinition/*.ts' instead of './stepDefinition/demo.ts'
 ```
-###5 Best Practices
-  Design the Step definitions such that the duplication can be avoided. 
+## 5 Best Practices
+  
+Design the Step definitions such that the duplication can be avoided. 
 
 
-###6 Cucumber- Parametization
+## 6 Cucumber- Parametization
 Use of scenario outline and examples in the feature file. 
 The test data is provided from the feature file itself.
 
-###7 Cucumber- ChaiAssertion Library
-  [Chai]
+## 7 Cucumber- ChaiAssertion Library
+  Chai
   ****
   Add dev dependancies:
   ```
@@ -91,7 +92,7 @@ The test data is provided from the feature file itself.
   ```
   expect(a).to.equal(b); 
   ```
-###8 Cucumber- Tagging
+## 8 Cucumber- Tagging
 If we want to run tests with specific tags only in that case we can use the tagging functionality available in cucumber.
 in the feature file add the @tag_name_to_run above the scenario which you want to execute.
 Add the tags option in the cucumberconf.ts file as below
@@ -102,7 +103,8 @@ cucumberOpts: {
 }
 ```
 
-###9 Cucumber- Hooks
+## 9 Cucumber- Hooks
+
 ## Running the tests
 
 Explain how to run the automated tests for this system
