@@ -20,15 +20,30 @@ protractor- is installed globally and for the node to identify it in the folder,
     "protractor-cucumber-framework": "^6.1.1",
 #2. Changes to config.ts for cucumber
   The file cucumberconfig.ts was added.
+  
 #3. Add new folder for feature files.
   Feature file is what holds the test case in the Gherkin language.
   All feature files have an extension of .feature
   Write a scenario is Given when then format using Gherkin.
+  Add the location to the cucumberconfig.ts file in the specs section e.g specs: ['../featureFolder/demo.feature']
+
 #4. Step Definitions
   Add this to the cucumberconfig.ts file under cucumberOpts: {}
   Add new folder stepDefinition.
   Create a step definition file for the corresponding feature file in a particular template.
   Add the path to the cucumberconfig.ts
-  Create a timeout.ts file in stepDefinition folder, protractor with cucumber can get confused when to time out and can continue forever. (~implicit wait)
+  Create a timeout.ts file in stepDefinition folder, protractor with cucumber can get confused when to time out in case of an error and can continue forever. (~implicit wait)
+  Add the path of the step definition file in the cucumerconfig.ts under the cucumberOpts.
   Because both files are present in stepDefinition just update the path to './stepDefinition/*.ts' instead of './stepDefinition/demo.ts'
-  
+
+#5 Best Practices
+  Design the Stepdefinitions such that the duplication can be avoided. 
+
+#6 Parametization
+Use of scenario outline and examples in the feature file. 
+The test data is provided from the feature file itself.
+
+#6 Assertion Library
+  Chai
+  ****
+

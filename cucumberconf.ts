@@ -24,7 +24,7 @@ export let config: Config = {
     cucumberOpts: {
         //require step definitions
         require: [
-            './stepDefinition/*.js'  //accepts a glob
+            './stepDefinition/*.js'  // The * will check for all the files in the stepDefinition folder, after transpiling the end file has an extension .js hence we are giving .js extension here aswell.
         ]
     }
     // // Options to be passed to Jasmine-node. // We dont need this as we will be using cucumber.
