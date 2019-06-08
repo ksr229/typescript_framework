@@ -16,10 +16,12 @@ Feature: Test Add functionality of Calculator App
         Then Sum of two numbers is displayed
         And is equal to '9'
 
-#   Using parametization with the help of scenario outline and examples, no need to use a new step definition
+    #   Using parametization with the help of scenario outline and examples, no need to use a new step definition
+    #   The firstNum and the secondNum have been parametized.
+    @paramExample
     Scenario Outline: Add two numbers and verify the result
         Given Navigate to the calculator website
-        When Enter two numbers '<firstNum>' and '<secondNum>'
+        When Enter two numbers '<firstNum>' and '<secondNum>'        
         And click on Go.
         Then Sum of two numbers is displayed
         And is equal to '<result>'
@@ -28,4 +30,3 @@ Feature: Test Add functionality of Calculator App
             | firstNum | secondNum | result |
             | 1        | 2         | 3      |
             | 2        | 3         | 5      |
-            

@@ -18,8 +18,9 @@ protractor- is installed globally and for the node to identify it in the folder,
 ```
 
 ###2 CUCUMBER
+This is a BDD style test framework for designing the Automation framework.
 
-1. Added dependencies for cucumber
+1. Add dependencies for cucumber
 
 ```
 "@types/cucumber": "^4.0.5",
@@ -33,7 +34,8 @@ protractor- is installed globally and for the node to identify it in the folder,
   The file cucumberconfig.ts was added.
 ```
 
-###3 Add new folder for feature files.
+###3 Cucumber- Feature files.
+Add new folder for feature files.
 Feature file is what holds the test case in the Gherkin language.
   All feature files have an extension of 
 	```
@@ -45,7 +47,8 @@ Add the location to the cucumberconfig.ts file in the specs section e.g
 specs: ['../featureFolder/demo.feature']
 ```
 
-###4 Step Definitions
+###4 Cucumber- Step Definitions
+Add new folder for the step definitions.
   Add this to the cucumberconfig.ts file under 
 ```
 cucumberOpts: {}
@@ -63,17 +66,43 @@ cucumberOpts
 './stepDefinition/*.ts' instead of './stepDefinition/demo.ts'
 ```
 ###5 Best Practices
-  Design the Stepdefinitions such that the duplication can be avoided. 
+  Design the Step definitions such that the duplication can be avoided. 
 
 
-###6 Parametization
+###6 Cucumber- Parametization
 Use of scenario outline and examples in the feature file. 
 The test data is provided from the feature file itself.
 
-###7 Assertion Library
+###7 Cucumber- ChaiAssertion Library
   Chai
   ****
+  Add dev dependancies:
+  ```
+  @types/chai
+  chai
+  chai-as-promise
+  ```
+  Is an assertion Library. We can also use just inbuilt assert, as given in the code demo.ts in the stepDefinition folder.
+  ```
+  import chai from "chai";
+  var expect = chai.expect;
+  ```
+  and then just use the assertion statement as below:
+  ```
+  expect(a).to.equal(b); 
+  ```
+###8 Cucumber- Tagging
+If we want to run tests with specific tags only in that case we can use the tagging functionality available in cucumber.
+in the feature file add the @tag_name_to_run above the scenario which you want to execute.
+Add the tags option in the cucumberconf.ts file as below
+```
+cucumberOpts: {
+  tags: ["@tag_name_to_run1", "@tag_name_to_run1"],
+  require: ['./stepDefinition/*.js'] 
+}
+```
 
+###9 Cucumber- Hooks
 ## Running the tests
 
 Explain how to run the automated tests for this system

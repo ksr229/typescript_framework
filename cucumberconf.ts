@@ -22,6 +22,8 @@ export let config: Config = {
     // They may include glob patterns.
     specs: ['../featureFolder/demo.feature'], // This will have a feature file in case of cucumber framework.
     cucumberOpts: {
+        //tag names which you want to execute
+        tags: "@paramExample",
         //require step definitions
         require: [
             './stepDefinition/*.js'  // The * will check for all the files in the stepDefinition folder, after transpiling the end file has an extension .js hence we are giving .js extension here aswell.
