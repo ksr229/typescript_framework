@@ -40,6 +40,18 @@ describe('Find and enter first number', () => {
     //     // let EC = ExpectedConditions;
     //     // browser.wait(EC.visibilityOf($(".lp_main:nth-child(2)")));
     //     browser.sleep(3000);
+    /** campaignBtn = $('.LPMcontainer >img[alt="Live chat"]')
+     *  dropDown = select[role='listbox']
+     * submitBtn = .lp_submit_button
+     * agentTyping = [data-lp-point='agent_is_typing']
+     * chatcontainer = [data-lp-point='lines_area']
+     * lastWelcomeLine = //p[starts-with(text(),'What can')]
+     * enterText = $('.lp_input_area')
+     * widget = $('.lp-slider-icon.lp_icon-dark')
+     * iframeLogin = $('#loginiframe2')
+     * nextBtn = by.xpath("//button[contains(text(),'Next')]")
+     * 
+     * */     
 
 
     //     });
