@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "protractor ./tmpJSFiles/conf.js",
+    "pretest": "tsc",
     "precucumber-test": "tsc",
     "protractor": "./node_modules/protractor/built/cli.js",
     "wdm-update": "./node_modules/.bin/webdriver-manager update",
