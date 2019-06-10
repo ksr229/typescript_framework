@@ -95,9 +95,13 @@ describe('Find and enter first number', () => {
             // browser.switchTo().defaultContent();
             browser.sleep(2000);
             browser.wait(EC.visibilityOf(element(by.xpath("//p[contains(text(),'Gas')]")))).then(()=>{
-                // browser.ignoreSynchronization = false
-                console.log(`The gas bill is displayed: ${element(by.xpath("//p[contains(text(),'Gas')]")).getText()}`);
-                browser.sleep(2000);
+                // 
+                element(by.xpath("//p[contains(text(),'Gas')]")).getText().then((text)=>{
+                    console.log(`The gas bill is displayed: ${text}`);
+                    browser.sleep(2000);
+                    // browser.ignoreSynchronization = false;
+                });
+                
             });
             // browser.wait(EC.visibilityOf(element(by.xpath("//p[contains(text(),'Gas')]"))));
             // console.log(`The gas bill is displayed: ${element(by.xpath("//p[contains(text(),'Gas')]")).getText()}`);
