@@ -1,4 +1,3 @@
-import * as request from 'request-promise-native';
 import {
     $,
     $$,
@@ -20,7 +19,9 @@ import { ExpectedConditions as EC } from 'protractor';
  * lastWelcomeLine = //p[starts-with(text(),'What can')]
  * enterText = $('.lp_input_area')
  * widget = $('.lp-slider-icon.lp_icon-dark')
- * iframeLogin = $('#loginiframe2')
+ * iframe1 = fr_83695_75293
+ * 
+ * iframe3 = $('#loginiframe2')      //iframe#loginiframe2
  * nextBtn = by.xpath("//button[contains(text(),'Next')]")
  * 
  * */
@@ -75,21 +76,35 @@ describe('Find and enter first number', () => {
         browser.wait(EC.visibilityOf(loginNotification));
         $("[data-lp-point='widget_sdk']").click().then(() => {
 
-            browser.ignoreSynchronization = false;
+            // browser.ignoreSynchronization = false;
             browser.sleep(3000);
-            // browser.switchTo().frame($('iframe[id^="LPFRM"]').getWebElement());
-            browser.switchTo().frame($('#loginiframe2').getWebElement());
-            browser.ignoreSynchronization = true;
-            element(by.xpath("//label[contains(text(), 'Email or Mobile')][1]")).sendKeys("shanghaiali@gmail.com");
-            // browser.sleep(2000);
+
+            // browser.switchTo().frame($('#fr_83695_75293').getWebElement());
+            browser.switchTo().frame($('iframe[id^="LPFRM"]').getWebElement());
+            browser.switchTo().frame($('iframe#loginiframe2').getWebElement());
+            // browser.ignoreSynchronization = true;
+            element(by.xpath("//label[contains(text(), 'Email or Mobile')]/following-sibling::input")).sendKeys("shanghaiali@gmail.com");
+            browser.sleep(2000);
+            element(by.xpath("//button[.=' Next ']")).click();
+            browser.sleep(3000);
+            $("[formcontrolname='password']").sendKeys("Welcome@1");
+            browser.sleep(3000);
+            element(by.xpath("//button[contains(text(),' Login')]")).click();
+            browser.sleep(3000);
+            browser.switchTo().defaultContent();
+            // browser.switchTo().defaultContent();
+            browser.sleep(2000);
+            browser.wait(EC.visibilityOf(element(by.xpath("//p[contains(text(),'Gas')]")))).then(()=>{
+                // browser.ignoreSynchronization = false
+                console.log(`The gas bill is displayed: ${element(by.xpath("//p[contains(text(),'Gas')]")).getText()}`);
+                browser.sleep(2000);
+            });
+            // browser.wait(EC.visibilityOf(element(by.xpath("//p[contains(text(),'Gas')]"))));
+            // console.log(`The gas bill is displayed: ${element(by.xpath("//p[contains(text(),'Gas')]")).getText()}`);
+
 
         });
-        // browser.switchTo().frame($('iframe[id^="LPFRM"]').getWebElement()).then(() => {
 
-        //     browser.switchTo().frame($('##loginiframe2').getWebElement()).then(() => {
-        //         element(by.xpath("//label[contains(text(), 'Email or Mobile')][1]")).sendKeys("shanghaiali@gmail.com");
-        //         browser.sleep(2000);
-        //     });
 
         // });
 
