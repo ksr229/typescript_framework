@@ -36,7 +36,7 @@ describe('Find and enter first number', () => {
         // console.log(result.statusCode);
         browser.get(url);
         // await
-        const campaignBtn = $$('[alt="Live chat"]').first();
+        const campaignBtn = $$('[alt="Live chat"]').first();   // USE THIS INSTEAD img[src^="https://www.agl.com.au/-/media/AGLMedia/Images/chat/alfieavatar60x60.png"]
         // let EC = ExpectedConditions;
         // browser.wait(EC.visibilityOf(campaignBtn)).then(function(){
         //     campaignBtn.click();
