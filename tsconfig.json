@@ -9,7 +9,12 @@
         "outDir": "tmpJSFiles",
         "removeComments": false,
         "sourceMap": false,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "types": [
+            "jasmine",
+            "jasminewd2",
+            "node"
+          ]
     },
     "exclude": [
         "node_modules",

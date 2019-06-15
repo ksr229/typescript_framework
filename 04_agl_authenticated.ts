@@ -32,11 +32,12 @@ describe('Find and enter first number', () => {
         browser.ignoreSynchronization = true;    // Check what is the difference between this and browseer.waitForAngularEnabled.
         let url = "https://agldstqtrtest.digital.agl.com.au/contact-us";
         browser.manage().window().maximize();
-        // const result = await request.get(url);
-        // console.log(result.statusCode);
+       // browser.manage().window().setSize(1400, 900);    //****Try to use this */
+  
         browser.get(url);
         // await
-        const campaignBtn = $$('[alt="Live chat"]').first();   // USE THIS INSTEAD img[src^="https://www.agl.com.au/-/media/AGLMedia/Images/chat/alfieavatar60x60.png"]
+        // const campaignBtn = $$('[alt="Live chat"]').first();   // USE THIS INSTEAD img[src*="alfieavatar60x60.png"]
+        const campaignBtn = $('img[src*="alfieavatar60x60.png"]');
         // let EC = ExpectedConditions;
         // browser.wait(EC.visibilityOf(campaignBtn)).then(function(){
         //     campaignBtn.click();
@@ -74,7 +75,7 @@ describe('Find and enter first number', () => {
         browser.sleep(3000);
         const loginNotification = $("[data-lp-point='widgetNotificationText']");
         browser.wait(EC.visibilityOf(loginNotification));
-        $("[data-lp-point='widget_sdk']").click().then(() => {
+        $("[data-lp-point='widget_sdk']").click().then(async () => {
 
             // browser.ignoreSynchronization = false;
             browser.sleep(3000);
@@ -94,14 +95,21 @@ describe('Find and enter first number', () => {
             browser.switchTo().defaultContent();
             // browser.switchTo().defaultContent();
             browser.sleep(2000);
-            browser.wait(EC.visibilityOf(element(by.xpath("//p[contains(text(),'Gas')]")))).then(()=>{
+            browser.wait(EC.visibilityOf(element(by.xpath("//p[contains(text(),'Elec')]")))).then(() => {
                 // 
-                element(by.xpath("//p[contains(text(),'Gas')]")).getText().then((text)=>{
-                    console.log(`The gas bill is displayed: ${text}`);
+                // element(by.xpath("//p[contains(text(),'Gas')]")).getText().then((text) => {
+                //     browser.sleep(3000);
+                //     console.log(`The gas bill is : ${text}`);
+                //     browser.sleep(2000);
+                //     // browser.ignoreSynchronization = false;
+                // });
+                element(by.xpath("//p[contains(text(),'Elec')]")).getText().then((text) => {
+                    browser.sleep(3000);
+                    console.log(`The Elec bill is : ${text}`);
                     browser.sleep(2000);
                     // browser.ignoreSynchronization = false;
                 });
-                
+
             });
             // browser.wait(EC.visibilityOf(element(by.xpath("//p[contains(text(),'Gas')]"))));
             // console.log(`The gas bill is displayed: ${element(by.xpath("//p[contains(text(),'Gas')]")).getText()}`);
